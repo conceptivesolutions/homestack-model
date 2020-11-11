@@ -4,78 +4,19 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>io.conceptive</groupId>
+    <artifactId>conceptive-parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
   <groupId>io.conceptive.netplan</groupId>
   <artifactId>model</artifactId>
   <version>1.0.1-SNAPSHOT</version>
-
   <name>NetPlan IoT: Model</name>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-  </properties>
-
-  <distributionManagement>
-    <repository>
-      <id>default</id>
-      <url>https://nexus.conceptive.io/repository/maven-releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>default</id>
-      <url>https://nexus.conceptive.io/repository/maven-snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
-
-  <repositories>
-    <repository>
-      <id>default</id>
-      <url>https://nexus.conceptive.io/repository/maven-public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 
   <build>
     <plugins>
-      <!-- Execute Tests -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.1</version>
-        <configuration>
-          <includes>
-            <include>**/Test_*.java</include>
-          </includes>
-        </configuration>
-      </plugin>
-
-      <!-- Enable Dependency Tree -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.8</version>
-      </plugin>
-
-      <!-- Add Soruces in Build -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>3.2.0</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
       <!-- Jandex Maven Plugin to generate jandex index for reflection purposes -->
       <!-- https://stackoverflow.com/questions/55513502/how-to-create-a-jandex-index-in-quarkus-for-classes-in-a-external-module/55513723#55513723 -->
       <plugin>
