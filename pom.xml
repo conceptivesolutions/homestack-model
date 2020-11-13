@@ -15,6 +15,24 @@
   <version>1.0.1-SNAPSHOT</version>
   <name>NetPlan IoT: Model</name>
 
+  <dependencies>
+    <!-- Websocket for Coders -->
+    <dependency>
+      <groupId>jakarta.websocket</groupId>
+      <artifactId>jakarta.websocket-api</artifactId>
+      <version>1.1.2</version>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- VertX for Json Support -->
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-core</artifactId>
+      <version>3.9.4</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
   <build>
     <plugins>
       <!-- Jandex Maven Plugin to generate jandex index for reflection purposes -->
