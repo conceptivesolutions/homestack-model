@@ -1,6 +1,7 @@
 package io.conceptive.netplan.model.satellite.events;
 
-import io.conceptive.netplan.model.satellite.events.data.AuthenticateEventData;
+import io.conceptive.netplan.model.satellite.SatelliteConfigurationDataModel;
+import io.conceptive.netplan.model.satellite.events.data.*;
 import io.conceptive.netplan.model.websocket.WebsocketEvent;
 
 /**
@@ -23,5 +24,10 @@ public class SatelliteWebSocketEvents
    * It gets sent initially and interval based, to "re-login"
    */
   public static final WebsocketEvent<AuthenticateEventData> AUTHENTICATE = new WebsocketEvent<>("authenticate");
+
+  /**
+   * Event that will send the config to use by a single satellite
+   */
+  public static final WebsocketEvent<SatelliteConfigurationDataModel> CONFIG = new WebsocketEvent<>("config");
 
 }
