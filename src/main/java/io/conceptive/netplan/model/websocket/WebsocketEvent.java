@@ -15,12 +15,12 @@ public class WebsocketEvent<T>
   /**
    * Type of the event
    */
-  public String type;
+  String type;
 
   /**
    * Data
    */
-  public T payload;
+  T payload;
 
   public WebsocketEvent()
   {
@@ -52,6 +52,22 @@ public class WebsocketEvent<T>
   public boolean equalType(@NotNull WebsocketEvent<?> pEvent)
   {
     return Objects.equals(type, pEvent.type);
+  }
+
+  /**
+   * Extracts the payload of this event, with the type of the given websocket event
+   *
+   * @param pEvent Event to determine the payload type
+   * @return the payload
+   */
+  @NotNull
+  public T payloadOf(@NotNull WebsocketEvent<?> pEvent)
+  {
+    if(equalType(pEvent))
+      //noinspection unchecked
+      return (T) pEvent.payload;
+
+    throw new UnsupportedOperationException(pEvent + " could not be cast to " + this);
   }
 
   @Override
