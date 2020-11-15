@@ -1,7 +1,6 @@
 package io.conceptive.netplan.model.data;
 
-import java.util.Date;
-import java.util.Map;
+import java.util.*;
 
 /**
  * POJO for a single metric record for a single device
@@ -38,6 +37,24 @@ public final class MetricRecordDataModel
    * Additional properties to the current state
    */
   public Map<String, String> result;
+
+  @Override
+  public boolean equals(Object pO)
+  {
+    if (this == pO)
+      return true;
+    if (pO == null || getClass() != pO.getClass())
+      return false;
+    MetricRecordDataModel that = (MetricRecordDataModel) pO;
+    return Objects.equals(deviceID, that.deviceID) && Objects.equals(recordTime, that.recordTime) &&
+        Objects.equals(type, that.type) && state == that.state && Objects.equals(result, that.result);
+  }
+
+  @Override
+  public int hashCode()
+  {
+    return Objects.hash(deviceID, recordTime, type, state, result);
+  }
 
   /**
    * State to determine, what to expect from a device

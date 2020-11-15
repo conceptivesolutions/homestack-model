@@ -1,6 +1,6 @@
 package io.conceptive.netplan.model.data;
 
-import java.util.Map;
+import java.util.*;
 
 /**
  * POJO for a single metric that describes, which statistics should be metrified
@@ -34,4 +34,21 @@ public final class MetricDataModel
    */
   public Map<String, String> settings;
 
+  @Override
+  public boolean equals(Object pO)
+  {
+    if (this == pO)
+      return true;
+    if (pO == null || getClass() != pO.getClass())
+      return false;
+    MetricDataModel that = (MetricDataModel) pO;
+    return Objects.equals(deviceID, that.deviceID) && Objects.equals(type, that.type) &&
+        Objects.equals(enabled, that.enabled) && Objects.equals(settings, that.settings);
+  }
+
+  @Override
+  public int hashCode()
+  {
+    return Objects.hash(deviceID, type, enabled, settings);
+  }
 }

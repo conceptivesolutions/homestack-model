@@ -1,5 +1,7 @@
 package io.conceptive.netplan.model.data;
 
+import java.util.Objects;
+
 /**
  * POJO for a single host.
  * Care, this will be used in REST directly
@@ -20,4 +22,20 @@ public final class HostDataModel
    */
   public String displayName;
 
+  @Override
+  public boolean equals(Object pO)
+  {
+    if (this == pO)
+      return true;
+    if (pO == null || getClass() != pO.getClass())
+      return false;
+    HostDataModel that = (HostDataModel) pO;
+    return Objects.equals(id, that.id) && Objects.equals(displayName, that.displayName);
+  }
+
+  @Override
+  public int hashCode()
+  {
+    return Objects.hash(id, displayName);
+  }
 }

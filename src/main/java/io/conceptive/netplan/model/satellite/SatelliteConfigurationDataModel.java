@@ -2,7 +2,7 @@ package io.conceptive.netplan.model.satellite;
 
 import io.conceptive.netplan.model.data.*;
 
-import java.util.Set;
+import java.util.*;
 
 /**
  * Model, that a single satellite retrieves from the cloud, to get its configuration.
@@ -24,4 +24,21 @@ public class SatelliteConfigurationDataModel
    */
   public Set<MetricDataModel> metrics;
 
+  @Override
+  public boolean equals(Object pO)
+  {
+    if (this == pO)
+      return true;
+    if (pO == null || getClass() != pO.getClass())
+      return false;
+    SatelliteConfigurationDataModel that = (SatelliteConfigurationDataModel) pO;
+    return Objects.equals(devices, that.devices) &&
+        Objects.equals(metrics, that.metrics);
+  }
+
+  @Override
+  public int hashCode()
+  {
+    return Objects.hash(devices, metrics);
+  }
 }

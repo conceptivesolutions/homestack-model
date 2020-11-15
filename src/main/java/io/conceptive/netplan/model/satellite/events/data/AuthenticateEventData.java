@@ -3,6 +3,8 @@ package io.conceptive.netplan.model.satellite.events.data;
 import io.conceptive.netplan.model.satellite.events.SatelliteWebSocketEvents;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 /**
  * Data for AUTHENTICATE event
  *
@@ -40,5 +42,23 @@ public class AuthenticateEventData
     version = pVersion;
     commVersion = SatelliteWebSocketEvents.COMM_VERSION;
     token = pToken;
+  }
+
+  @Override
+  public boolean equals(Object pO)
+  {
+    if (this == pO)
+      return true;
+    if (pO == null || getClass() != pO.getClass())
+      return false;
+    AuthenticateEventData that = (AuthenticateEventData) pO;
+    return commVersion == that.commVersion && Objects.equals(id, that.id) &&
+        Objects.equals(version, that.version) && Objects.equals(token, that.token);
+  }
+
+  @Override
+  public int hashCode()
+  {
+    return Objects.hash(id, version, commVersion, token);
   }
 }

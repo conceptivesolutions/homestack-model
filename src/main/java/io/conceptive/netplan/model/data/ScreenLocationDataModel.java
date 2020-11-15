@@ -1,5 +1,7 @@
 package io.conceptive.netplan.model.data;
 
+import java.util.Objects;
+
 /**
  * Location of a model on screen
  *
@@ -19,4 +21,20 @@ public final class ScreenLocationDataModel
    */
   public float y;
 
+  @Override
+  public boolean equals(Object pO)
+  {
+    if (this == pO)
+      return true;
+    if (pO == null || getClass() != pO.getClass())
+      return false;
+    ScreenLocationDataModel that = (ScreenLocationDataModel) pO;
+    return Float.compare(that.x, x) == 0 && Float.compare(that.y, y) == 0;
+  }
+
+  @Override
+  public int hashCode()
+  {
+    return Objects.hash(x, y);
+  }
 }
