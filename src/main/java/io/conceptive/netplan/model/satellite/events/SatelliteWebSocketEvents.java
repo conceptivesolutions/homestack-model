@@ -1,7 +1,7 @@
 package io.conceptive.netplan.model.satellite.events;
 
 import io.conceptive.netplan.model.satellite.SatelliteConfigurationDataModel;
-import io.conceptive.netplan.model.satellite.events.data.AuthenticateEventData;
+import io.conceptive.netplan.model.satellite.events.data.*;
 import io.conceptive.netplan.model.websocket.WebsocketEvent;
 
 /**
@@ -29,5 +29,10 @@ public class SatelliteWebSocketEvents
    * Event that will send the config to use by a single satellite
    */
   public static final WebsocketEvent<SatelliteConfigurationDataModel> CONFIG = new WebsocketEvent<>("config");
+
+  /**
+   * Event to inform the cloud, that new records are available
+   */
+  public static final WebsocketEvent<MetricRecordsEventData> RECORDS = new WebsocketEvent<>("records");
 
 }
