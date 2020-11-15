@@ -1,7 +1,7 @@
 package io.conceptive.netplan.model.satellite.events;
 
 import io.conceptive.netplan.model.satellite.SatelliteConfigurationDataModel;
-import io.conceptive.netplan.model.satellite.events.data.*;
+import io.conceptive.netplan.model.satellite.events.data.AuthenticateEventData;
 import io.conceptive.netplan.model.websocket.WebsocketEvent;
 
 /**

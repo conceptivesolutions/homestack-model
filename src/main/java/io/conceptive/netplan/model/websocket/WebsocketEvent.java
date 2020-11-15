@@ -63,7 +63,7 @@ public class WebsocketEvent<T>
   @NotNull
   public T payloadOf(@NotNull WebsocketEvent<?> pEvent)
   {
-    if(equalType(pEvent))
+    if (equalType(pEvent))
       //noinspection unchecked
       return (T) pEvent.payload;
 

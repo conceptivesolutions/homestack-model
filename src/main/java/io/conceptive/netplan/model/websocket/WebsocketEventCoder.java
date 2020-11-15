@@ -1,18 +1,16 @@
 package io.conceptive.netplan.model.websocket;
 
-import io.vertx.core.json.*;
+import io.vertx.core.json.Json;
 
 import javax.websocket.*;
-import javax.websocket.DecodeException;
-import javax.websocket.EncodeException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
  * Coder for Websockets
  *
- * @see WebsocketEvent
  * @author w.glanzer, 13.11.2020
+ * @see WebsocketEvent
  */
 public class WebsocketEventCoder implements Decoder.Text<WebsocketEvent<?>>, Encoder.Text<WebsocketEvent<?>>
 {
@@ -33,7 +31,7 @@ public class WebsocketEventCoder implements Decoder.Text<WebsocketEvent<?>>, Enc
   @Override
   public WebsocketEvent<?> decode(String pString) throws DecodeException
   {
-    if(pString == null)
+    if (pString == null)
       return null;
 
     try
@@ -41,15 +39,15 @@ public class WebsocketEventCoder implements Decoder.Text<WebsocketEvent<?>>, Enc
       StringTokenizer tokenizer = new StringTokenizer(pString, _SEPARATOR);
       String prefix = tokenizer.nextToken(); // ignore
       String type = new String(Base64.getUrlDecoder().decode(tokenizer.nextToken()), StandardCharsets.UTF_8);
-      String payloadClass =  new String(Base64.getUrlDecoder().decode(tokenizer.nextToken()), StandardCharsets.UTF_8);
-      String payload =  new String(Base64.getUrlDecoder().decode(tokenizer.nextToken()), StandardCharsets.UTF_8);
+      String payloadClass = new String(Base64.getUrlDecoder().decode(tokenizer.nextToken()), StandardCharsets.UTF_8);
+      String payload = new String(Base64.getUrlDecoder().decode(tokenizer.nextToken()), StandardCharsets.UTF_8);
 
       WebsocketEvent<Object> event = new WebsocketEvent<>();
       event.type = type;
       event.payload = Json.decodeValue(payload, Class.forName(payloadClass));
       return event;
     }
-    catch(Exception e)
+    catch (Exception e)
     {
       throw new DecodeException(pString, "Not an instance of websocket event", e);
     }
@@ -64,7 +62,7 @@ public class WebsocketEventCoder implements Decoder.Text<WebsocketEvent<?>>, Enc
   @Override
   public String encode(WebsocketEvent<?> pEvent) throws EncodeException
   {
-    if(pEvent == null)
+    if (pEvent == null)
       return null;
 
     try
@@ -74,7 +72,7 @@ public class WebsocketEventCoder implements Decoder.Text<WebsocketEvent<?>>, Enc
           _SEPARATOR + (pEvent.payload == null ? null : Base64.getUrlEncoder().encodeToString(pEvent.payload.getClass().getName().getBytes(StandardCharsets.UTF_8))) +
           _SEPARATOR + (pEvent.payload == null ? null : Base64.getUrlEncoder().encodeToString(Json.encode(pEvent.payload).getBytes(StandardCharsets.UTF_8)));
     }
-    catch(Exception e)
+    catch (Exception e)
     {
       throw new EncodeException(pEvent, "Failed to encode websocket event", e);
     }
