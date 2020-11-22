@@ -1,8 +1,8 @@
-package de.homestack.model.satellite.events;
+package io.conceptive.homestack.model.satellite.events;
 
-import de.homestack.model.satellite.SatelliteConfigurationDataModel;
-import de.homestack.model.satellite.events.data.*;
-import de.homestack.model.websocket.WebsocketEvent;
+import io.conceptive.homestack.model.satellite.SatelliteConfigurationDataModel;
+import io.conceptive.homestack.model.satellite.events.data.*;
+import io.conceptive.homestack.model.websocket.WebsocketEvent;
 
 /**
  * Contains all events for the communication between satellite and backend

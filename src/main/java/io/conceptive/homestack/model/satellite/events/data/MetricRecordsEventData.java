@@ -1,6 +1,6 @@
-package de.homestack.model.satellite.events.data;
+package io.conceptive.homestack.model.satellite.events.data;
 
-import de.homestack.model.data.MetricRecordDataModel;
+import io.conceptive.homestack.model.data.MetricRecordDataModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

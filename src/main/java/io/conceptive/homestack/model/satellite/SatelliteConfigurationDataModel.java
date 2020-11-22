@@ -1,6 +1,6 @@
-package de.homestack.model.satellite;
+package io.conceptive.homestack.model.satellite;
 
-import de.homestack.model.data.*;
+import io.conceptive.homestack.model.data.*;
 
 import java.util.*;
 

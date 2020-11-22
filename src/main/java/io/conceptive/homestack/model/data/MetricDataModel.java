@@ -1,4 +1,4 @@
-package de.homestack.model.data;
+package io.conceptive.homestack.model.data;
 
 import java.util.*;
 
