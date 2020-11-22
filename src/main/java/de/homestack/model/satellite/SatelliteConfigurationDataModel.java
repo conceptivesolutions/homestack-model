@@ -1,6 +1,6 @@
-package io.conceptive.netplan.model.satellite;
+package de.homestack.model.satellite;
 
-import io.conceptive.netplan.model.data.*;
+import de.homestack.model.data.*;
 
 import java.util.*;
 

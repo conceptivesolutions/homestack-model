@@ -1,4 +1,4 @@
-package io.conceptive.netplan.model.websocket;
+package de.homestack.model.websocket;
 
 import org.jetbrains.annotations.*;
 

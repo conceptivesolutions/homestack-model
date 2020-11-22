@@ -1,4 +1,4 @@
-package io.conceptive.netplan.model.data;
+package de.homestack.model.data;
 
 import java.util.Objects;
 

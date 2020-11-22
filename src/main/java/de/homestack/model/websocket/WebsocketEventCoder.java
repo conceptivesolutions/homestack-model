@@ -1,4 +1,4 @@
-package io.conceptive.netplan.model.websocket;
+package de.homestack.model.websocket;
 
 import io.vertx.core.json.Json;
 
