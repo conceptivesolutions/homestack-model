@@ -1,5 +1,7 @@
 package io.conceptive.homestack.model.data.satellite;
 
+import io.conceptive.homestack.model.data.ScreenLocationDataModel;
+
 /**
  * Model for a single satellite
  *
@@ -17,5 +19,10 @@ public class SatelliteDataModel
    * ID of the host this satellite belongs to
    */
   public String hostID;
+
+  /**
+   * Determines, where this device is located
+   */
+  public ScreenLocationDataModel location;
 
 }
