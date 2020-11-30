@@ -8,13 +8,18 @@ import java.util.Objects;
  *
  * @author w.glanzer, 29.11.2020
  */
-public class LeaseDataModel
+public class SatelliteLeaseDataModel
 {
 
   /**
-   * ID of the lease (same as the id of the satellite)
+   * ID of the lease
    */
   public String id;
+
+  /**
+   * ID of the satellite this lease belongs to
+   */
+  public String satelliteID;
 
   /**
    * ID of the user, who owns this lease
@@ -38,9 +43,10 @@ public class LeaseDataModel
       return true;
     if (pO == null || getClass() != pO.getClass())
       return false;
-    LeaseDataModel that = (LeaseDataModel) pO;
+    SatelliteLeaseDataModel that = (SatelliteLeaseDataModel) pO;
     return Objects.equals(id, that.id) &&
         Objects.equals(userID, that.userID) &&
+        Objects.equals(satelliteID, that.satelliteID) &&
         Objects.equals(revokedDate, that.revokedDate) &&
         Objects.equals(token, that.token);
   }
@@ -48,6 +54,6 @@ public class LeaseDataModel
   @Override
   public int hashCode()
   {
-    return Objects.hash(id, userID, revokedDate, token);
+    return Objects.hash(id, userID, satelliteID, revokedDate, token);
   }
 }
