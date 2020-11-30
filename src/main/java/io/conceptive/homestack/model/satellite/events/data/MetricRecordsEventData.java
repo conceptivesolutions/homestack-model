@@ -1,7 +1,6 @@
 package io.conceptive.homestack.model.satellite.events.data;
 
 import io.conceptive.homestack.model.data.MetricRecordDataModel;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -17,15 +16,6 @@ public class MetricRecordsEventData
    * Contains all recorded data
    */
   public Set<MetricRecordDataModel> records;
-
-  public MetricRecordsEventData()
-  {
-  }
-
-  public MetricRecordsEventData(@NotNull Set<MetricRecordDataModel> pRecords)
-  {
-    records = pRecords;
-  }
 
   @Override
   public boolean equals(Object pO)

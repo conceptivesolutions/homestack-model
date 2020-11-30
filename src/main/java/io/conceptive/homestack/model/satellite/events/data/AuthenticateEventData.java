@@ -1,7 +1,6 @@
 package io.conceptive.homestack.model.satellite.events.data;
 
 import io.conceptive.homestack.model.satellite.events.SatelliteWebSocketEvents;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -13,9 +12,14 @@ import java.util.Objects;
 public class AuthenticateEventData
 {
   /**
-   * ID of the satellite
+   * ID of the lease to use for this satellite
    */
-  public String id;
+  public String leaseID;
+
+  /**
+   * Token that matches the lease ID
+   */
+  public String leaseToken;
 
   /**
    * Version of the satellite
@@ -25,24 +29,7 @@ public class AuthenticateEventData
   /**
    * Communication Version
    */
-  public int commVersion;
-
-  /**
-   * JWT to authenticate / authorize
-   */
-  public String token;
-
-  public AuthenticateEventData()
-  {
-  }
-
-  public AuthenticateEventData(@NotNull String pId, @NotNull String pVersion, @NotNull String pToken)
-  {
-    id = pId;
-    version = pVersion;
-    commVersion = SatelliteWebSocketEvents.COMM_VERSION;
-    token = pToken;
-  }
+  public int commVersion = SatelliteWebSocketEvents.COMM_VERSION;
 
   @Override
   public boolean equals(Object pO)
@@ -52,13 +39,15 @@ public class AuthenticateEventData
     if (pO == null || getClass() != pO.getClass())
       return false;
     AuthenticateEventData that = (AuthenticateEventData) pO;
-    return commVersion == that.commVersion && Objects.equals(id, that.id) &&
-        Objects.equals(version, that.version) && Objects.equals(token, that.token);
+    return commVersion == that.commVersion &&
+        Objects.equals(leaseID, that.leaseID) &&
+        Objects.equals(leaseToken, that.leaseToken) &&
+        Objects.equals(version, that.version);
   }
 
   @Override
   public int hashCode()
   {
-    return Objects.hash(id, version, commVersion, token);
+    return Objects.hash(leaseID, leaseToken, version, commVersion);
   }
 }
