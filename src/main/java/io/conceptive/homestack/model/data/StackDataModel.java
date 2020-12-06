@@ -3,17 +3,16 @@ package io.conceptive.homestack.model.data;
 import java.util.Objects;
 
 /**
- * POJO for a single host.
- * Care, this will be used in REST directly
+ * POJO for a single stack
  *
  * @author w.glanzer, 15.10.2020
  */
 @SuppressWarnings("unused")
-public final class HostDataModel
+public final class StackDataModel
 {
 
   /**
-   * ID of the host
+   * ID of the stack
    */
   public String id;
 
@@ -29,7 +28,7 @@ public final class HostDataModel
       return true;
     if (pO == null || getClass() != pO.getClass())
       return false;
-    HostDataModel that = (HostDataModel) pO;
+    StackDataModel that = (StackDataModel) pO;
     return Objects.equals(id, that.id) && Objects.equals(displayName, that.displayName);
   }
 

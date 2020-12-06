@@ -16,9 +16,9 @@ public class SatelliteDataModel
   public String id;
 
   /**
-   * ID of the host this satellite belongs to
+   * ID of the stack this satellite belongs to
    */
-  public String hostID;
+  public String stackID;
 
   /**
    * Determines, where this device is located

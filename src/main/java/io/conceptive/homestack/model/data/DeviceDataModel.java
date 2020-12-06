@@ -15,9 +15,9 @@ public final class DeviceDataModel
   public String id;
 
   /**
-   * ID of the host this device belongs to
+   * ID of the stack this device belongs to
    */
-  public String hostID;
+  public String stackID;
 
   /**
    * Name of the icon for this device (mainly present in gui)
@@ -42,13 +42,13 @@ public final class DeviceDataModel
     if (pO == null || getClass() != pO.getClass())
       return false;
     DeviceDataModel that = (DeviceDataModel) pO;
-    return Objects.equals(id, that.id) && Objects.equals(hostID, that.hostID) && Objects.equals(icon, that.icon) &&
+    return Objects.equals(id, that.id) && Objects.equals(stackID, that.stackID) && Objects.equals(icon, that.icon) &&
         Objects.equals(address, that.address) && Objects.equals(location, that.location);
   }
 
   @Override
   public int hashCode()
   {
-    return Objects.hash(id, hostID, icon, address, location);
+    return Objects.hash(id, stackID, icon, address, location);
   }
 }
