@@ -1,6 +1,6 @@
 package io.conceptive.homestack.model.data;
 
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author w.glanzer, 13.09.2020
@@ -34,6 +34,11 @@ public final class DeviceDataModel
    */
   public ScreenLocationDataModel location;
 
+  /**
+   * Contains all available slots with "row" and "column" coordinates
+   */
+  public List<List<NetworkSlotDataModel>> slots;
+
   @Override
   public boolean equals(Object pO)
   {
@@ -43,12 +48,12 @@ public final class DeviceDataModel
       return false;
     DeviceDataModel that = (DeviceDataModel) pO;
     return Objects.equals(id, that.id) && Objects.equals(stackID, that.stackID) && Objects.equals(icon, that.icon) &&
-        Objects.equals(address, that.address) && Objects.equals(location, that.location);
+        Objects.equals(address, that.address) && Objects.equals(location, that.location) && Objects.equals(slots, that.slots);
   }
 
   @Override
   public int hashCode()
   {
-    return Objects.hash(id, stackID, icon, address, location);
+    return Objects.hash(id, stackID, icon, address, location, slots);
   }
 }
