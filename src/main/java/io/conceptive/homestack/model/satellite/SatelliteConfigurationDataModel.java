@@ -1,6 +1,7 @@
 package io.conceptive.homestack.model.satellite;
 
-import io.conceptive.homestack.model.data.*;
+import io.conceptive.homestack.model.data.device.DeviceDataModel;
+import io.conceptive.homestack.model.data.metric.MetricDataModel;
 
 import java.util.*;
 

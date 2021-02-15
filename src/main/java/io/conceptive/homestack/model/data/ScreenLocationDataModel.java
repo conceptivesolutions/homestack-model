@@ -1,13 +1,15 @@
 package io.conceptive.homestack.model.data;
 
-import java.util.Objects;
+import lombok.*;
 
 /**
  * Location of a model on screen
  *
  * @author w.glanzer, 11.11.2020
  */
-@SuppressWarnings("unused")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public final class ScreenLocationDataModel
 {
 
@@ -21,20 +23,4 @@ public final class ScreenLocationDataModel
    */
   public float y;
 
-  @Override
-  public boolean equals(Object pO)
-  {
-    if (this == pO)
-      return true;
-    if (pO == null || getClass() != pO.getClass())
-      return false;
-    ScreenLocationDataModel that = (ScreenLocationDataModel) pO;
-    return Float.compare(that.x, x) == 0 && Float.compare(that.y, y) == 0;
-  }
-
-  @Override
-  public int hashCode()
-  {
-    return Objects.hash(x, y);
-  }
 }

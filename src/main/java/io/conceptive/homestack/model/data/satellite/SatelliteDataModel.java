@@ -1,28 +1,29 @@
 package io.conceptive.homestack.model.data.satellite;
 
-import io.conceptive.homestack.model.data.ScreenLocationDataModel;
+import lombok.*;
+
+import java.util.List;
 
 /**
  * Model for a single satellite
  *
  * @author w.glanzer, 30.11.2020
  */
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class SatelliteDataModel
 {
 
   /**
    * ID of the satellite
    */
+  @NonNull
   public String id;
 
   /**
-   * ID of the stack this satellite belongs to
+   * Leases
    */
-  public String stackID;
-
-  /**
-   * Determines, where this device is located
-   */
-  public ScreenLocationDataModel location;
+  public List<SatelliteLeaseDataModel> leases;
 
 }

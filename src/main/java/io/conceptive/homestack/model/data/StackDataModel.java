@@ -1,19 +1,26 @@
 package io.conceptive.homestack.model.data;
 
-import java.util.Objects;
+import io.conceptive.homestack.model.data.device.DeviceDataModel;
+import io.conceptive.homestack.model.data.satellite.SatelliteDataModel;
+import lombok.*;
+
+import java.util.List;
 
 /**
  * POJO for a single stack
  *
  * @author w.glanzer, 15.10.2020
  */
-@SuppressWarnings("unused")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public final class StackDataModel
 {
 
   /**
    * ID of the stack
    */
+  @NonNull
   public String id;
 
   /**
@@ -21,20 +28,14 @@ public final class StackDataModel
    */
   public String displayName;
 
-  @Override
-  public boolean equals(Object pO)
-  {
-    if (this == pO)
-      return true;
-    if (pO == null || getClass() != pO.getClass())
-      return false;
-    StackDataModel that = (StackDataModel) pO;
-    return Objects.equals(id, that.id) && Objects.equals(displayName, that.displayName);
-  }
+  /**
+   * Devices in this stack
+   */
+  public List<DeviceDataModel> devices;
 
-  @Override
-  public int hashCode()
-  {
-    return Objects.hash(id, displayName);
-  }
+  /**
+   * Satellites in this stack
+   */
+  public List<SatelliteDataModel> satellites;
+
 }

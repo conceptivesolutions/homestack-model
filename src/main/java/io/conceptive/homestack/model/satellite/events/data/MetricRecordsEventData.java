@@ -1,6 +1,6 @@
 package io.conceptive.homestack.model.satellite.events.data;
 
-import io.conceptive.homestack.model.data.MetricRecordDataModel;
+import io.conceptive.homestack.model.data.metric.MetricRecordDataModel;
 
 import java.util.*;
 
