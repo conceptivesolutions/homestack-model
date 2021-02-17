@@ -24,6 +24,7 @@ public class MetricRecordDataModel
   /**
    * ID of the metric this record belongs to
    */
+  @NonNull
   public String metricID;
 
   /**

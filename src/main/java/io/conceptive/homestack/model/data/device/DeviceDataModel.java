@@ -1,7 +1,6 @@
 package io.conceptive.homestack.model.data.device;
 
 import io.conceptive.homestack.model.data.ScreenLocationDataModel;
-import io.conceptive.homestack.model.data.metric.MetricDataModel;
 import lombok.*;
 
 import java.util.List;
@@ -22,6 +21,12 @@ public class DeviceDataModel
   public String id;
 
   /**
+   * ID of the stack this device belongs to
+   */
+  @NonNull
+  public String stackID;
+
+  /**
    * Name of the icon for this device (mainly present in gui)
    */
   public String icon;
@@ -40,10 +45,5 @@ public class DeviceDataModel
    * Contains all available slots with "row" and "column" coordinates
    */
   public List<List<NetworkSlotDataModel>> slots;
-
-  /**
-   * All available metrics
-   */
-  public List<MetricDataModel> metrics;
 
 }

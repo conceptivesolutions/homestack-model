@@ -22,6 +22,12 @@ public class SatelliteLeaseDataModel
   public String id;
 
   /**
+   * ID of the satellite this lease belongs to
+   */
+  @NonNull
+  public String satelliteID;
+
+  /**
    * ID of the user, who owns this lease
    */
   public String userID;

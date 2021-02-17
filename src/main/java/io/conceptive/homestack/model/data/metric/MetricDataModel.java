@@ -22,6 +22,12 @@ public class MetricDataModel
   public String id;
 
   /**
+   * ID of the device this metric belongs to
+   */
+  @NonNull
+  public String deviceID;
+
+  /**
    * Type of the metric (acts like an ID in combination with deviceID)
    * something like "ping, tracert, ..."
    */

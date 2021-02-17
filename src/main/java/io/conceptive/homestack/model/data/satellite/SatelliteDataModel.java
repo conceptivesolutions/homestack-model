@@ -2,8 +2,6 @@ package io.conceptive.homestack.model.data.satellite;
 
 import lombok.*;
 
-import java.util.List;
-
 /**
  * Model for a single satellite
  *
@@ -22,8 +20,9 @@ public class SatelliteDataModel
   public String id;
 
   /**
-   * Leases
+   * ID of the stack this satellite belongs to
    */
-  public List<SatelliteLeaseDataModel> leases;
+  @NonNull
+  public String stackID;
 
 }
