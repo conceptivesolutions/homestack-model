@@ -4,7 +4,7 @@ import io.conceptive.homestack.model.data.device.DeviceDataModel;
 import io.conceptive.homestack.model.data.metric.MetricDataModel;
 import lombok.*;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Model, that a single satellite retrieves from the cloud, to get its configuration.
@@ -20,12 +20,12 @@ public class SatelliteConfigurationDataModel
   /**
    * Contains all known devices
    */
-  public Set<DeviceDataModel> devices;
+  public List<DeviceDataModel> devices;
 
   /**
    * Contains all metrics, that should be executed.
    * It can contain metric types, that this satellite is not able to execute (specified by enabledMetricTypes)
    */
-  public Set<MetricDataModel> metrics;
+  public List<MetricDataModel> metrics;
 
 }
