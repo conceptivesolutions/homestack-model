@@ -1,6 +1,7 @@
 package io.conceptive.homestack.model.satellite.events;
 
 import io.conceptive.homestack.model.satellite.SatelliteConfigurationDataModel;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.*;
 
 /**
@@ -12,6 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@RegisterForReflection
 public class RenewConfigurationEventData
 {
 

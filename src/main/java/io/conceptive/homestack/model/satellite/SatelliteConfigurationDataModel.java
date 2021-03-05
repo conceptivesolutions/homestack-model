@@ -2,6 +2,7 @@ package io.conceptive.homestack.model.satellite;
 
 import io.conceptive.homestack.model.data.device.DeviceDataModel;
 import io.conceptive.homestack.model.data.metric.MetricDataModel;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@RegisterForReflection
 public class SatelliteConfigurationDataModel
 {
 

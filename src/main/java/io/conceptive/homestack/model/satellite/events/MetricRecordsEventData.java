@@ -1,6 +1,7 @@
 package io.conceptive.homestack.model.satellite.events;
 
 import io.conceptive.homestack.model.data.metric.MetricRecordDataModel;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.*;
 
 import java.util.Set;
@@ -14,6 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@RegisterForReflection
 public class MetricRecordsEventData
 {
 

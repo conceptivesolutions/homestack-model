@@ -1,5 +1,6 @@
 package io.conceptive.homestack.model.data.satellite;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.*;
 
 import java.util.Date;
@@ -13,6 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@RegisterForReflection
 public class SatelliteLeaseDataModel
 {
 

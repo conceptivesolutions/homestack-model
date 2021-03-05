@@ -1,5 +1,6 @@
 package io.conceptive.homestack.model.data.metric;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.*;
 
 import java.util.Map;
@@ -13,6 +14,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@RegisterForReflection
 public class MetricDataModel
 {
 

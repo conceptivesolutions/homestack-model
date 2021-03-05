@@ -1,5 +1,6 @@
 package io.conceptive.homestack.model.data.device;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.*;
 
 /**
@@ -12,6 +13,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@RegisterForReflection
 public class NetworkSlotDataModel
 {
 

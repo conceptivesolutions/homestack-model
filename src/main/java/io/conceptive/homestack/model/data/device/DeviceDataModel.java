@@ -1,6 +1,7 @@
 package io.conceptive.homestack.model.data.device;
 
 import io.conceptive.homestack.model.data.ScreenLocationDataModel;
+import io.quarkus.runtime.annotations.RegisterForReflection;
 import lombok.*;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
+@RegisterForReflection
 public class DeviceDataModel
 {
 
