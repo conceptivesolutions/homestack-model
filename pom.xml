@@ -16,7 +16,7 @@
   <name>HomeStack: Model</name>
 
   <properties>
-    <quarkus.version>1.11.3.Final</quarkus.version>
+    <quarkus.version>1.12.1.Final</quarkus.version>
   </properties>
 
   <dependencies>
