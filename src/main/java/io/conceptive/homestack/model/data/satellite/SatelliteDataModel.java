@@ -28,4 +28,9 @@ public class SatelliteDataModel
   @NonNull
   public String stackID;
 
+  /**
+   * DisplayName of this satellite
+   */
+  public String displayName;
+
 }
